@@ -110,16 +110,17 @@ const App = () => {
   ] = useReducer(reducer, initialState);
   // derived state
   const numQuestions = questions.length;
+  const KEY = import.meta.env.VITE_API_KEY;
   useEffect(function () {
     const controller = new AbortController();
     async function fetchQuestion() {
       try {
-        const result = await fetch("http://localhost:8000/questions", {
+        const result = await fetch(`https://api.jsonbin.io/v3/b/${KEY}`, {
           signal: controller.signal,
         });
         const data = await result.json();
         // we can think it as an event
-        dispatch({ type: "dataReceived", payload: data });
+        dispatch({ type: "dataReceived", payload: data.record.questions });
       } catch (error) {
         console.error(error);
         dispatch({ type: "dataFailed" });
