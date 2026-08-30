@@ -110,7 +110,7 @@ const App = () => {
   ] = useReducer(reducer, initialState);
   // derived state
   const numQuestions = questions.length;
-  const KEY = import.meta.env.VITE_API_KEY;
+  const KEY = import.meta.env.VITE_API_KEY_Quiz_App;
   useEffect(function () {
     const controller = new AbortController();
     async function fetchQuestion() {
