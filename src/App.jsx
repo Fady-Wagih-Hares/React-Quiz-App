@@ -13,7 +13,7 @@ import FinishScreen from "./components/FinishScreen";
 import Timer from "./components/Timer";
 import Footer from "./components/Footer";
 // import { SECS_PER_QUESTION } from "./config/";
-import { SECS_PER_QUESTION } from "./../config/config";
+import { SECS_PER_QUESTION } from "./config/config.js";
 
 const initialState = {
   questions: [],
